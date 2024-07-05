@@ -1,16 +1,26 @@
 # Stoikov_Micro_Price
 
-Walk through of Sasha Stoikovs paper on the Micro Price
+Here, I use my L2 Order Book Handler implementaiton to expand on Stoikov's Micro Price paper.
 
-Paper can be found here: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2970694
+Original paper can be found here: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2970694
 
-Using a MSFT data set, we observe a similar result to Stoikov:
+Instead of using volume at the top of the book to calculate imbalance, I use order queue length.
 
-as spreads widen, the price adjustment is less affected by imbalance
+Using a MSFT LOBSTER data set, I first walk through the paper and re create the results:
 
-![Adj](https://github.com/samdelaney42/Stoikov_Micro_Price/blob/main/data/images/adj.png)
+We find as spreads widen, the price adjustment is less affected by imbalance (1 tick spread steeper than 2).
 
-Interestingly, when it comes to the stationary distribution, we see far fewer observations of a 'balanced imbalance' for a 1 tick spread.
-Both one and two tick spreads have more observations at the extreme ends of imbalance rather than in the middle.
+![comparsion](https://github.com/samdelaney42/Stoikov_Micro_Price/blob/main/data/images/adj.png)
 
-![Count](https://github.com/samdelaney42/Stoikov_Micro_Price/blob/main/data/images/counts.png)
+When using queue lenght to calculate imbalance, we see slightly different behaviour:
+
+We see that for a 1 tick spread, the price adjustment is very close the weighted mid and almost linear whereas the 2 tick spread is much shallower, indicating that queue length imbalance is significantly less informative as spread widnes
+
+![comparsion_2](https://github.com/samdelaney42/Stoikov_Micro_Price/blob/main/data/images/q_adj.png)
+
+With regard to observation frequency, the difference between edge and middle imbalances for a 1 tick spread is more signifcant than for 2 ticks.
+Interestingly, they have an almost identical distribution pattern too.
+
+![comparsion_3](https://github.com/samdelaney42/Stoikov_Micro_Price/blob/main/data/images/q_counts.png)
+
+
