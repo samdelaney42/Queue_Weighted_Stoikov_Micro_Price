@@ -6,9 +6,11 @@ Original paper can be found here: https://papers.ssrn.com/sol3/papers.cfm?abstra
 
 Instead of using volume at the top of the book to calculate imbalance, I use order queue length.
 
-Using a MSFT LOBSTER data set, I first walk through the paper and re create the results:
+Only limit prices and volumes are present in the LOBSTER order book data - my implementation allows us to include order queue length in the output.
 
-We find as spreads widen, the price adjustment is less affected by imbalance (1 tick spread steeper than 2).
+Using the MSFT 50 LOBSTER message data set, I first walk through the paper and re create the results:
+
+We find, as Stoikov does, that as spreads widen, the price adjustment is less affected by imbalance (1 tick spread steeper than 2).
 
 ![comparsion](https://github.com/samdelaney42/Stoikov_Micro_Price/blob/main/data/images/adj.png)
 
