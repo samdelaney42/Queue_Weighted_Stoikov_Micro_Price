@@ -6,7 +6,7 @@ Original paper can be found here: https://papers.ssrn.com/sol3/papers.cfm?abstra
 
 Instead of using volume at the top of the book to calculate imbalance, I use order queue length.
 
-If we assume that each order represents a different market participant, it may be a better indicatior of fair price rather than volume.
+If we assume that each order represents a different market participant, it may be a better indicatior of demand and therfore fair price rather than volume.
 
 Only limit prices and volumes are present in the LOBSTER order book data - my implementation allows us to include order queue length in the output.
 
