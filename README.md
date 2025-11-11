@@ -1,6 +1,6 @@
 # Queue_Weighted_Stoikov_Micro_Price
 
-Here, I use my L2 Order Book Handler implementaiton to expand on Stoikov's Micro Price paper.
+Here, I use my L2 Order Book Handler implementaiton (attempt) to expand on Stoikov's Micro Price paper.
 
 Original paper can be found here: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2970694
 
@@ -10,7 +10,7 @@ If we assume that each order represents a different market participant, it may b
 
 Only limit prices and volumes are present in the LOBSTER order book data - my implementation allows us to include order queue length in the output.
 
-Using the MSFT 50 LOBSTER message data set, I first walk through the paper and re create the results:
+Using the MSFT 50 LOBSTER message data set, I first walk through the paper and re create the results, mapping each step to code (much of this code is taken from Stoikov's own notebook):
 
 We find, as Stoikov does, that as spreads widen, the price adjustment is less affected by imbalance (1 tick spread steeper than 2).
 
