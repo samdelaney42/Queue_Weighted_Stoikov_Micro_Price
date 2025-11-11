@@ -1,6 +1,6 @@
 # Queue_Weighted_Stoikov_Micro_Price
 
-Here, I use my L2 Order Book Handler implementaiton (attempt) to expand on Stoikov's Micro Price paper.
+Here, I use my L2 Order Book Handler implementaiton (in an attempt) to expand on Stoikov's Micro Price paper.
 
 Original paper can be found here: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2970694
 
